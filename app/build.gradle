@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 22
+    compileSdk 29
 
     defaultConfig {
         applicationId "com.wwm.nowirelesscharge"
         minSdk 22
-        targetSdk 22
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 

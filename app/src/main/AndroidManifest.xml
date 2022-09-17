@@ -29,12 +29,6 @@
             </intent-filter>
         </activity>
 
-
-        <service
-            android:name=".AutoStartService"
-            android:exported="true"
-            android:enabled="true" />
-
         <receiver
             android:name=".BootReceiver"
             android:label="BootReceiver"

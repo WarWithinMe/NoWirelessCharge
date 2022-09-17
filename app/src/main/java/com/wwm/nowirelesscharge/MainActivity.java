@@ -1,41 +1,19 @@
 package com.wwm.nowirelesscharge;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
-//    public static final String IntentServiceStopped = "com.wwm.nowirelesscharge.SERVICE_STOPPED";
-//
-//    private BroadcastReceiver bReceiver = new BroadcastReceiver() {
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            if(intent.getAction().equals(IntentServiceStopped)) {
-//                MainActivity.this.finishAndRemoveTask();
-//            }
-//        }
-//    };
-//
-//    LocalBroadcastManager bManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        Log.i("NoWireless", "App");
-//
-//        Toast.makeText(this, "App", Toast.LENGTH_LONG).show();
 
         Window win = getWindow();
         WindowManager.LayoutParams winParams = win.getAttributes();
@@ -44,13 +22,6 @@ public class MainActivity extends Activity {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
 
         enableTranslucentStatusBar(this);
-
-//        bManager = LocalBroadcastManager.getInstance(this);
-//        IntentFilter intentFilter = new IntentFilter();
-//        intentFilter.addAction(IntentServiceStopped);
-//        bManager.registerReceiver(bReceiver, intentFilter);
-
-//        startService(new Intent(this, AutoStartService.class));
 
         BYDWirelessCharger.turnOff(this);
         moveTaskToBack(true);
@@ -62,11 +33,6 @@ public class MainActivity extends Activity {
                     }
                 },
                 100);
-
-//        Intent startMain = new Intent(Intent.ACTION_MAIN);
-//        startMain.addCategory(Intent.CATEGORY_HOME);
-//        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(startMain);
     }
 
     public static void enableTranslucentStatusBar(Activity activity) {
@@ -93,12 +59,4 @@ public class MainActivity extends Activity {
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
     }
-
-//    @Override
-//    protected void onDestroy() {
-//        if (bReceiver != null && bManager != null) {
-//           bManager.unregisterReceiver(bReceiver);
-//        }
-//        super.onDestroy();
-//    }
 }
