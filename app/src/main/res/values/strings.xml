@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NoWirelessCharge</string>
+    <string name="info">自动关闭无线充电</string>
+</resources>
